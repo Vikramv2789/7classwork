@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html onclick="react(event);">
+<head> 
+    <title>Events!</title>
+    <style></style>
+     <script>
+        function initialize(){
+         eventOutput = document.getElementById("evout");
+        }
+        function react(e){
+            if(e.type == "contextmenu")
+               e.preventDefault();
+            
+            var str "(" + e.clientX + "," +  e.clientY + ")<br />";
+            str += "target:" + e.target + "<br />";
+            str += "button:" + e.button + "<br />";
+            str += "button:" + e.type + "<br />";
+
+            e.target.style.backgroundColor = clr;
+            eventOutput.innerHTML = str;
+        }
+    </script>
+    </head>        
+</html>
