@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-
-<html onclick="react(event);">
-<head> 
+<html lang="en" onmousedown="react(event, 'cornflowerblue');" onmouseup="react(event, 'white');" oncontextmenu="react(event, 'white')">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events!</title>
-    <style></style>
-     <script>
-        function initialize(){
-         eventOutput = document.getElementById("evout");
+    <script>
+        function intialize(){
+            eventOutput = document.getElementById("evout")
         }
-        function react(e){
-            if(e.type == "contextmenu")
-               e.preventDefault();
-            
-            var str "(" + e.clientX + "," +  e.clientY + ")<br />";
-            str += "target:" + e.target + "<br />";
-            str += "button:" + e.button + "<br />";
-            str += "button:" + e.type + "<br />";
+        function react(e, clr){
+            if (e.type == "contextmenu")
+                e.preventDefault();
+
+            var str = "(" + e.client + ", " + e.clientY + ")<br/>";
+            str += "target: " + e.target + "<br />";
+            str += "button: " + e.button + "<br />"
+            str += "type: " + e.type + '<br />'
 
             e.target.style.backgroundColor = clr;
+
             eventOutput.innerHTML = str;
         }
     </script>
-    </head>        
+</head>
+<body onload="initialize();">
+    <div id="evout"></div>
+</body>
 </html>
